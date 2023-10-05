@@ -1,0 +1,32 @@
+import 'package:bloc_network_test/view_model/internet_bolc/internet_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../view_model/internet_bolc/internet_state.dart';
+
+
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: BlocConsumer<InternetBloc, InternetState>(
+            listener: (context, state) {
+              if(state is InternetLostState){
+                print("Lost");
+              }else if (state is InternetGainedState){
+                print("Gain");
+              }
+              // do stuff here based on BlocA's state
+            },
+            builder: (context, state) {
+              return Text("Loding");
+              // return widget here based on BlocA's state
+            }
+        )
+      ),
+    );
+  }
+}
