@@ -15,9 +15,10 @@ class HomeView extends StatelessWidget {
         child: BlocConsumer<InternetBloc, InternetState>(
             listener: (context, state) {
               if(state is InternetLostState){
-                print("Lost");
+                print("Lost Internet");
+
               }else if (state is InternetGainedState){
-                print("Gain");
+                print("Gain Internet");
               }
               // do stuff here based on BlocA's state
             },
