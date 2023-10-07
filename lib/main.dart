@@ -18,10 +18,9 @@ class MyApp extends StatelessWidget {
       create: (BuildContext context) => InternetBloc(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Flutter Bloc',
         theme: ThemeData(
           // This is the theme of your application.
-          //
           //idn't reset back to zero; the application
           // state is not lost during the reload. To reset the state, use hot
           // restart instead.
